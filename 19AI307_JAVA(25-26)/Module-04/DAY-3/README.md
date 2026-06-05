@@ -1,80 +1,3 @@
-Skip to content
-AnkithaMopuri
-19AI307_ODD-25-26-
-Repository navigation
-Code
-Pull requests
-Actions
-Projects
-Security and quality
-Insights
-You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork keerthanasivakumar02/19AI307_ODD-25-26-, so you can send a pull request.
-19AI307_ODD-25-26-/19AI307_JAVA(25-26)/Module-04/DAY-3
-/
-README.md
-in
-main
-
-Edit
-
-Preview
-Indent mode
-
-Spaces
-Indent size
-
-2
-Line wrap mode
-
-Soft wrap
-Editing README.md file contents
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
 # Ex.No:4(C)  COMPOSITION IN JAVA
 
 ## QUESTION:
@@ -122,6 +45,56 @@ class Lion implements Carnivore {
 }
 
 class Buffalo implements Herbivore {}
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-No file chosen
-Attach files by dragging & dropping, selecting or pasting them.
+class Tiger implements Carnivore {
+    public void eat(Herbivore h) {
+        System.out.println("Tiger eats Buffalo");
+    }
+}
+
+interface AnimalFactory {
+    Herbivore createHerbivore();
+    Carnivore createCarnivore();
+}
+
+class AfricaFactory implements AnimalFactory {
+    public Herbivore createHerbivore() { return new Wildebeest(); }
+    public Carnivore createCarnivore() { return new Lion(); }
+}
+
+class AsiaFactory implements AnimalFactory {
+    public Herbivore createHerbivore() { return new Buffalo(); }
+    public Carnivore createCarnivore() { return new Tiger(); }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String region = sc.nextLine().toLowerCase();
+        AnimalFactory factory;
+
+        if (region.equals("africa")) factory = new AfricaFactory();
+        else if (region.equals("asia")) factory = new AsiaFactory();
+        else {
+            System.out.println("Invalid region");
+            return;
+        }
+
+        Carnivore carn = factory.createCarnivore();
+        Herbivore herb = factory.createHerbivore();
+        carn.eat(herb);
+    }
+}
+```
+
+
+
+
+
+## OUTPUT:
+
+![java43](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/8b4be1e27b6fb5da0aa68915801ab1e6c9c7174e/19AI307_JAVA(25-26)/Module-04/DAY-3/java43.png)
+
+## RESULT:
+Thus, the program using Composition and Abstract Factory Pattern was successfully implemented and executed to create animal interactions for African and Asian regions.
+
+
