@@ -1,78 +1,3 @@
-Skip to content
-AnkithaMopuri
-19AI307_ODD-25-26-
-Repository navigation
-Code
-Pull requests
-Actions
-Projects
-Security and quality
-Insights
-You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork keerthanasivakumar02/19AI307_ODD-25-26-, so you can send a pull request.
-19AI307_ODD-25-26-/19AI307_JAVA(25-26)/Module-03/DAY-4
-/
-README.md
-in
-main
-
-Edit
-
-Preview
-Indent mode
-
-Spaces
-Indent size
-
-2
-Line wrap mode
-
-Soft wrap
-Editing README.md file contents
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
 # Ex.No:3(D)    INTERFACE 
 
 ## QUESTION:
@@ -118,6 +43,56 @@ class LenientJudge implements Judge {
             return "WIN";
         else if (p2 > p1 && diff >= 5)
             return "LOSE";
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-No file chosen
-Attach files by dragging & dropping, selecting or pasting them.
+        else
+            return "DRAW";
+    }
+}
+
+class StrictJudge implements Judge {
+    public String decide(int p1, int p2) {
+        int diff = Math.abs(p1 - p2);
+        if (p1 > p2 && diff >= 10)
+            return "WIN";
+        else if (p2 > p1 && diff >= 10)
+            return "LOSE";
+        else
+            return "DRAW";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int p1 = sc.nextInt();
+        int p2 = sc.nextInt();
+        int judgeType = sc.nextInt();
+
+        Judge judge;
+        if (judgeType == 1)
+            judge = new LenientJudge();
+        else if (judgeType == 2)
+            judge = new StrictJudge();
+        else {
+            System.out.println("Invalid judge type");
+            return;
+        }
+
+        System.out.println(judge.decide(p1, p2));
+    }
+}
+```
+
+
+
+
+
+
+
+## OUTPUT:
+![java34](https://github.com/ABINAYA-27-76/19AI307_ODD-25-26-/blob/564ba08ef73efc7e73a0883948f623cfa5b0ee65/19AI307_JAVA(25-26)/Module-03/DAY-4/java34.png)
+
+
+## RESULT:
+Thus, the Java program demonstrating Interface implementation using different judging criteria was executed successfully.
+
+
